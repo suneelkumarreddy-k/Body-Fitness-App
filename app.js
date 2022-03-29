@@ -118,16 +118,21 @@ try {
 		}
 	}
 
+            function delTbl() {            
+               var table = document.getElementById("logTbl");
+				var rowCount = table.rows.length;
+				for (var i = rowCount - 1; i > 0; i--) {
+					table.deleteRow(i);
+				}
+              return table;
+            }
+
 	function logRead() {
 		//alert(localStorage.length);
 		if (typeof(Storage) !== "undefined") {
 			if (localStorage.length > 0) {
 				// Code for localStorage/sessionStorage.
-				var table = document.getElementById("logTbl");
-				var rowCount = table.rows.length;
-				for (var i = rowCount - 1; i > 0; i--) {
-					table.deleteRow(i);
-				}
+				var table = delTbl(); 
 				const fdte = new Date();
 				let day = fdte.getDate();
 				let arObj = [];
@@ -264,7 +269,7 @@ try {
 					}, false);​
 					cell2.style.display = 'none';
 				}
-			}
+			} else { delTbl(); }
 		} else {
 			alert("Outdated Browser");
 		}
