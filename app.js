@@ -13,18 +13,18 @@ try {
 				let tdy = false;
 				for (i = 0; i < localStorage.length; i++) {
 					let key = localStorage.key(i);
-                                   if (key != "rpm") {
-					const dte = new Date(key);
-                                   
-					if (dte.getDate() < day) {
-						let jsnObj = JSON.parse(localStorage.getItem(key));
-						arObj.push(jsnObj);
-					}
+					if (key != "rpm") {
+						const dte = new Date(key);
 
-					if (dte.getDate() == day) {
-						tdy = true;
+						if (dte.getDate() < day) {
+							let jsnObj = JSON.parse(localStorage.getItem(key));
+							arObj.push(jsnObj);
+						}
+
+						if (dte.getDate() == day) {
+							tdy = true;
+						}
 					}
-                                   }
 				}
 
 				if (!tdy) {
@@ -118,38 +118,38 @@ try {
 		}
 	}
 
-            function delTbl() {            
-               var table = document.getElementById("logTbl");
-				var rowCount = table.rows.length;
-				for (var i = rowCount - 1; i > 0; i--) {
-					table.deleteRow(i);
-				}
-              return table;
-            }
+	function delTbl() {
+		var table = document.getElementById("logTbl");
+		var rowCount = table.rows.length;
+		for (var i = rowCount - 1; i > 0; i--) {
+			table.deleteRow(i);
+		}
+		return table;
+	}
 
 	function logRead() {
 		//alert(localStorage.length);
 		if (typeof(Storage) !== "undefined") {
 			if (localStorage.length > 0) {
 				// Code for localStorage/sessionStorage.
-				var table = delTbl(); 
+				var table = delTbl();
 				const fdte = new Date();
 				let day = fdte.getDate();
 				let arObj = [];
 				for (i = 0; i < localStorage.length; i++) {
 					let key = "";
-                                          if (localStorage.key(i) != "rpm") {
-                                            key = localStorage.key(i);
-                                          
-					const dte = new Date(key);
-                                   
-					if (dte.getDate() >= day - 6) {
-						/*var row = table.insertRow(i + 1);
-						var cell1 = row.insertCell(0);
-						var cell2 = row.insertCell(1);*/
-						let jsnObj = JSON.parse(localStorage.getItem(key));
-						arObj.push(jsnObj);
-						/*cell1.innerText = "Workout = " + jsnObj.workout;
+					if (localStorage.key(i) != "rpm") {
+						key = localStorage.key(i);
+
+						const dte = new Date(key);
+
+						if (dte.getDate() >= day - 6) {
+							/*var row = table.insertRow(i + 1);
+							var cell1 = row.insertCell(0);
+							var cell2 = row.insertCell(1);*/
+							let jsnObj = JSON.parse(localStorage.getItem(key));
+							arObj.push(jsnObj);
+							/*cell1.innerText = "Workout = " + jsnObj.workout;
 					cell1.innerText += " ¦¦ Reps (n) Sets (n) Span (s) Rest (s) =";
                                         cell1.innerText += " " + jsnObj.reps + " " + jsnObj.sets + " " + jsnObj.span + " " + jsnObj.rest;
 					cell1.innerText += " ¦¦ Date = " + key;
@@ -201,10 +201,10 @@ try {
 					}, false);​
 					cell2.style.display = 'none';*/
 
-					} else {
-						break;
+						} else {
+							break;
+						}
 					}
-                                    }
 				}
 				arObj = arObj.sort(function(a, b) {
 					var dateA = new Date(a.date).getTime();
@@ -269,7 +269,9 @@ try {
 					}, false);​
 					cell2.style.display = 'none';
 				}
-			} else { delTbl(); }
+			} else {
+				delTbl();
+			}
 		} else {
 			alert("Outdated Browser");
 		}
