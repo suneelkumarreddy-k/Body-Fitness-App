@@ -4,7 +4,7 @@ try {
 
 		if (typeof(Storage) !== "undefined") {
 
-			if (localStorage.length > 0) {
+			if (localStorage.length > 1) {
 				localStorage.rpm = "true";
 				//alert(localStorage.getItem("rpm"));
 				const fdte = new Date();
