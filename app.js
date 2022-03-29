@@ -3,9 +3,9 @@ try {
 	function reProgram() {
 
 		if (typeof(Storage) !== "undefined") {
-
+                        localStorage.rpm = "true";
 			if (localStorage.length > 1) {
-				localStorage.rpm = "true";
+				
 				//alert(localStorage.getItem("rpm"));
 				const fdte = new Date();
 				let day = fdte.getDate();
