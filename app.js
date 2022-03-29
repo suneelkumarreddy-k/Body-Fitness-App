@@ -57,8 +57,8 @@ try {
 					document.getElementById("rst").value = flObj[0].rest;
 					document.getElementById("wt").value = flObj[0].workout;
 				} else {
-					alert("Try Later!")
-				};
+					alert("Try Later!");
+				}
 			} else {
 				localStorage.rpm = "false";
 			}
