@@ -13,7 +13,9 @@ try {
 				let tdy = false;
 				for (i = 0; i < localStorage.length; i++) {
 					let key = localStorage.key(i);
+                                   if (key != "rpm") {
 					const dte = new Date(key);
+                                   
 					if (dte.getDate() < day) {
 						let jsnObj = JSON.parse(localStorage.getItem(key));
 						arObj.push(jsnObj);
@@ -22,6 +24,7 @@ try {
 					if (dte.getDate() == day) {
 						tdy = true;
 					}
+                                   }
 				}
 
 				if (!tdy) {
@@ -129,8 +132,12 @@ try {
 				let day = fdte.getDate();
 				let arObj = [];
 				for (i = 0; i < localStorage.length; i++) {
-					let key = localStorage.key(i);
+					let key = "";
+                                          if (localStorage.key(i) != "rpm") {
+                                            key = localStorage.key(i);
+                                          
 					const dte = new Date(key);
+                                   
 					if (dte.getDate() >= day - 6) {
 						/*var row = table.insertRow(i + 1);
 						var cell1 = row.insertCell(0);
@@ -192,6 +199,7 @@ try {
 					} else {
 						break;
 					}
+                                    }
 				}
 				arObj = arObj.sort(function(a, b) {
 					var dateA = new Date(a.date).getTime();
