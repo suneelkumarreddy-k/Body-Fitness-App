@@ -28,6 +28,7 @@ try {
 				}
 
 				if (!tdy) {
+alert(arObj.length);
 					arObj = arObj.sort(function(a, b) {
 						var dateA = new Date(a.date).getTime();
 						var dateB = new Date(b.date).getTime();
@@ -35,7 +36,7 @@ try {
 					});
 					let flObj = [];
 					let pdy = new Date(arObj[0].date).getDate();
-					//alert("pdy " + arObj.length);
+					alert("pdy " + arObj.length);
 					for (i = 0; i < arObj.length; i++) {
 						let dy = new Date(arObj[i].date).getDate();
 						//alert(dy);
@@ -44,7 +45,7 @@ try {
 							//alert(arObj[i]);
 						}
 					}
-					//alert(flObj.length);
+					alert(flObj.length);
 					flObj = flObj.sort(function(a, b) {
 						var dateA = new Date(a.date).getTime();
 						var dateB = new Date(b.date).getTime();
