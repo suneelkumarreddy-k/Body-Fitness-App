@@ -266,7 +266,7 @@ try {
 							clickCount = 0;
 							doubleClick(ele);
 						}
-					}, false);​
+					}, false);
 					cell2.style.display = 'none';
 				}
 			} else {
