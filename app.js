@@ -22,7 +22,7 @@ try {
 							arObj.push(jsnObj);//alert(jsnObj.workout);
 						}
 
-						if (dte.getTime() === day.getTime()) {
+						if (dte.toLocaleDateString() === day.toLocaleDateString()) {
 							tdy = true; alert(tdy);
 						}
 					}
