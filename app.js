@@ -23,7 +23,7 @@ try {
 						}
 
 						if (dte.toLocaleDateString() === day.toLocaleDateString()) {
-							tdy = true; alert(tdy);
+							tdy = true; //alert(tdy);
 						}
 					}
 				}
