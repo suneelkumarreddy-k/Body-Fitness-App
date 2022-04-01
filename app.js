@@ -12,8 +12,9 @@ try {
 				let arObj = [];
 				let tdy = false;
 				for (i = 0; i < localStorage.length; i++) {
-					let key = localStorage.key(i);alert(key);
+					let key = localStorage.key(i);
 					if (key != "rpm") {
+                                         alert(key);
 						const dte = new Date(key);
 
 						if (dte.getDate() < day) {
