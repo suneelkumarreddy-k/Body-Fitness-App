@@ -8,7 +8,7 @@ try {
 				
 				//alert(localStorage.getItem("rpm"));
 				const fdte = new Date();
-				let day = fdte.getDate();
+				let day = fdte;
 				let arObj = [];
 				let tdy = false;
 				for (i = 0; i < localStorage.length; i++) {
@@ -17,13 +17,13 @@ try {
                                          //alert(key);
 						const dte = new Date(key);
 
-						if (dte.getDate() < day) {
+						if (dte.getTime() < day.getTime()) {
 							let jsnObj = JSON.parse(localStorage.getItem(key));
 							arObj.push(jsnObj);alert(jsnObj.workout);
 						}
 
-						if (dte.getDate() == day) {
-							tdy = true;
+						if (dte.getTime() === day.getTime()) {
+							tdy = true; alert(tdy);
 						}
 					}
 				}
