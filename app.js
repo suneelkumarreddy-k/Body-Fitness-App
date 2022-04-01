@@ -14,12 +14,12 @@ try {
 				for (i = 0; i < localStorage.length; i++) {
 					let key = localStorage.key(i);
 					if (key != "rpm") {
-                                         alert(key);
+                                         //alert(key);
 						const dte = new Date(key);
 
 						if (dte.getDate() < day) {
 							let jsnObj = JSON.parse(localStorage.getItem(key));
-							arObj.push(jsnObj);
+							arObj.push(jsnObj);alert(jsnObj.workout);
 						}
 
 						if (dte.getDate() == day) {
