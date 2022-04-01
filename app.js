@@ -3,9 +3,9 @@ try {
 	function reProgram() {
 
 		if (typeof(Storage) !== "undefined") {
-                        localStorage.rpm = "true";
+			localStorage.rpm = "true";
 			if (localStorage.length > 1) {
-				
+
 				//alert(localStorage.getItem("rpm"));
 				const fdte = new Date();
 				let day = fdte;
@@ -14,12 +14,12 @@ try {
 				for (i = 0; i < localStorage.length; i++) {
 					let key = localStorage.key(i);
 					if (key != "rpm") {
-                                         //alert(key);
+						//alert(key);
 						const dte = new Date(key);
 
 						if (dte.getTime() < day.getTime()) {
 							let jsnObj = JSON.parse(localStorage.getItem(key));
-							arObj.push(jsnObj);//alert(jsnObj.workout);
+							arObj.push(jsnObj); //alert(jsnObj.workout);
 						}
 
 						if (dte.toLocaleDateString() === day.toLocaleDateString()) {
@@ -29,7 +29,7 @@ try {
 				}
 
 				if (!tdy) {
-//alert(arObj.length);
+					//alert(arObj.length);
 					arObj = arObj.sort(function(a, b) {
 						var dateA = new Date(a.date).getTime();
 						var dateB = new Date(b.date).getTime();
