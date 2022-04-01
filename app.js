@@ -12,7 +12,7 @@ try {
 				let arObj = [];
 				let tdy = false;
 				for (i = 0; i < localStorage.length; i++) {
-					let key = localStorage.key(i);
+					let key = localStorage.key(i);alert(key);
 					if (key != "rpm") {
 						const dte = new Date(key);
 
@@ -36,7 +36,7 @@ alert(arObj.length);
 					});
 					let flObj = [];
 					let pdy = new Date(arObj[0].date).getDate();
-					alert("pdy " + arObj.length);
+					//alert("pdy " + arObj.length);
 					for (i = 0; i < arObj.length; i++) {
 						let dy = new Date(arObj[i].date).getDate();
 						//alert(dy);
@@ -45,7 +45,7 @@ alert(arObj.length);
 							//alert(arObj[i]);
 						}
 					}
-					alert(flObj.length);
+					//alert(flObj.length);
 					flObj = flObj.sort(function(a, b) {
 						var dateA = new Date(a.date).getTime();
 						var dateB = new Date(b.date).getTime();
