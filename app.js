@@ -19,7 +19,7 @@ try {
 
 						if (dte.getTime() < day.getTime()) {
 							let jsnObj = JSON.parse(localStorage.getItem(key));
-							arObj.push(jsnObj);alert(jsnObj.workout);
+							arObj.push(jsnObj);//alert(jsnObj.workout);
 						}
 
 						if (dte.getTime() === day.getTime()) {
@@ -29,7 +29,7 @@ try {
 				}
 
 				if (!tdy) {
-alert(arObj.length);
+//alert(arObj.length);
 					arObj = arObj.sort(function(a, b) {
 						var dateA = new Date(a.date).getTime();
 						var dateB = new Date(b.date).getTime();
