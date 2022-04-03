@@ -517,10 +517,10 @@ try {
 					if (spnCnt == span && spnCt <= span * sets && rest > 0) {
 						rstCnt++;
 						document.getElementById("wtrt").value = document.getElementById("wkr").innerText = rstCnt;
-if (rest - rstCnt <= 3 && rest - rstCnt >= 1 && setCnt != sets) {
+						if (rest - rstCnt <= 3 && rest - rstCnt >= 1 && setCnt != sets) {
 
-window.speechSynthesis.speak(new SpeechSynthesisUtterance(String(rstCnt - rest).replace('-','')));
-}
+							window.speechSynthesis.speak(new SpeechSynthesisUtterance(String(rstCnt - rest).replace('-', '')));
+						}
 						if (rstCnt == rest && wrkTtl != wrkTotal) {
 							spnCnt = 0; //setCnt++;
 							//document.getElementById("wtrt").value = 0;
