@@ -144,12 +144,12 @@ try {
 
 						const dte = new Date(key); day.setDate(day.getDate() - 6);
 
-						if (dte.getTime() >= day.getTime()) {
+						//if (dte.getTime() >= day.getTime()) {
 							
 							let jsnObj = JSON.parse(localStorage.getItem(key));
 							arObj.push(jsnObj);
 
-						} 
+						//} 
 					}
 				}
 				arObj = arObj.sort(function(a, b) {
