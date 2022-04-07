@@ -143,65 +143,12 @@ try {
 					if (localStorage.key(i) != "rpm") {
 						key = localStorage.key(i);
 
-						const dte = new Date(key); day = day.setDate(day.getDate() - 6);
+						const dte = new Date(key); day.setDate(day.getDate() - 6);
 
 						if (dte.toLocaleDateString() >= day.toLocaleDateString()) {
-							/*var row = table.insertRow(i + 1);
-							var cell1 = row.insertCell(0);
-							var cell2 = row.insertCell(1);*/
+							
 							let jsnObj = JSON.parse(localStorage.getItem(key));
 							arObj.push(jsnObj);
-							/*cell1.innerText = "Workout = " + jsnObj.workout;
-					cell1.innerText += " ¦¦ Reps (n) Sets (n) Span (s) Rest (s) =";
-                                        cell1.innerText += " " + jsnObj.reps + " " + jsnObj.sets + " " + jsnObj.span + " " + jsnObj.rest;
-					cell1.innerText += " ¦¦ Date = " + key;
-					cell2.innerText = key;
-
-					function singleClick(obj) {
-						if (!btnRst.disabled) {
-							if (confirm("Add?")) {
-								let nCell = obj.nextElementSibling;
-								let wDta = JSON.parse(localStorage.getItem(nCell.innerText));
-								document.getElementById("wt").value = wDta.workout;
-								document.getElementById("rps").value = wDta.reps;
-								document.getElementById("sts").value = wDta.sets;
-								document.getElementById("spn").value = wDta.span;
-								document.getElementById("rst").value = wDta.rest;
-								alert("Workout Planned");
-								let elt = document.getElementById("sa");
-								elt.scrollIntoView();
-								navigator.vibrate(200);
-							}
-						}
-					}
-
-					function doubleClick(obj) {
-						if (!btnRst.disabled) {
-							let nCell = obj.nextElementSibling;
-							if (confirm("Remove?")) {
-								localStorage.removeItem(nCell.innerText);
-								logRead();
-							}
-						}
-					}
-
-					var clickCount = 0;
-
-					cell1.addEventListener('click', function() {
-						let ele = this;
-						clickCount++;
-						if (clickCount === 1) {
-							singleClickTimer = setTimeout(function() {
-								clickCount = 0;
-								singleClick(ele);
-							}, 400);
-						} else if (clickCount === 2) {
-							clearTimeout(singleClickTimer);
-							clickCount = 0;
-							doubleClick(ele);
-						}
-					}, false);​
-					cell2.style.display = 'none';*/
 
 						} else {
 							break;
