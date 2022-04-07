@@ -145,7 +145,7 @@ try {
 
 						const dte = new Date(key); let mdte = day.setDate(day.getDate() - 6);
 
-						if (dte.toLocaleDateString() >= day.toLocaleDateString()) {
+						if (dte.toLocaleDateString() >= mdte.toLocaleDateString()) {
 							/*var row = table.insertRow(i + 1);
 							var cell1 = row.insertCell(0);
 							var cell2 = row.insertCell(1);*/
