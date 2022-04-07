@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Test</title>
+</head>
+<body>
+<noscript> <b>Hint</b> : JavaScript disabled 😎 </noscript>
+    <h1>Body Fitness Program (test) </h1>
+    <h2 id="sa">Schema_</h2>
+    <form onsubmit="pgm();return false">
+      <!--<label for="wp">Workout Pattern (Reps(no) Sets(no) Span(sec) Rest(sec) = 01 01 01 01):</label>
+		<input id="wp" type="text" name="pattern" placeholder="Enter Workout Pattern" onfocusout="p(this)" oninvalid="this.setCustomValidity('Reps Sets Span Rest 20 5 60 30')" oninput="this.setCustomValidity('');f(this)" required pattern="[0-9 ]+" onfocus="f(this)">
+		-->
+      <table>
+        <tr>
+          <th>Reps (no)</th>
+          <th>Sets (no)</th>
+          <th>Span (sec)</th>
+          <th>Rest (sec)</th>
+        </tr>
+        <tr>
+          <td>
+            <input type="number" min="0" required id="rps" placeholder="00" />
+          </td>
+          <td>
+            <input type="number" min="0" required id="sts" placeholder="00" />
+          </td>
+          <td>
+            <input type="number" min="0" required id="spn" placeholder="00" />
+          </td>
+          <td>
+            <input type="number" min="0" required id="rst" placeholder="00" />
+          </td>
+        </tr>
+      </table>
+<p><b>Sets</b>: 3-10 | <b>Set Time Span</b>: 1-3 Sec x Reps | <b>Strength</b>: 3-5 Reps | <b>Hypertrophy</b>: 6-15 reps | <b>Endurance</b>: >15 reps | <b>Rest</b>: 0-60 Sec Strength Endurance | <b>Muscle Up</b>:120-180 Sec | <b>Power</b>: 180-300 Sec</p>
+      <label for="wt">Workout (Type, Set (no)(asc) = Push-ups, 1) :</label>
+      <textarea
+        id="wt"
+        placeholder="Enter Workout"
+        name="workout"
+        required
+        onfocus="f(this)"
+        oninput="f(this)"
+      ></textarea>
+<!-- Rounded switch -->
+
+<label class="switch">
+  <input type="checkbox" id="rpmSth">
+  <span class="slider round"></span>
+</label>
+ <label for="rpmSth">AUTO</label>
+
+<label class="switch">
+  <input type="checkbox" id="shfSth">
+  <span class="slider round"></span>
+</label>
+ <label for="shfSth">SHUFFLE</label>
+      <input type="button" value="RANDOMIZE" id="btnRdm" onclick="shAr()" />
+      <input type="button" value="PUMP DUMP" id="btnPmp" onclick="pump()" />
+      <input type="button" value="REPROGRAM" id="btnRpm" onclick="reProgram()" />
+      <input type="submit" value="PROGRAM" id="btnPrm" />
+    </form>
+    <h2 id="tr">Tracker_</h2>
+    <table>
+      <tr>
+        <th colspan="4">Workout Plan</th>
+      </tr>
+      <tr>
+        <td colspan="4"><span id="wrt">😎</span></td>
+      </tr>
+
+      <tr>
+        <th>Reps (no)</th>
+        <th>Sets (no)</th>
+        <th>Span (sec)</th>
+        <th>Rest (sec)</th>
+      </tr>
+      <tr>
+        <td><span id="reps">0</span></td>
+        <td><span id="sets">0</span></td>
+        <td><span id="span">0</span></td>
+        <td><span id="rest">0</span></td>
+      </tr>
+      <tr>
+        <th colspan="2">Progress</th>
+        <th colspan="2">Workout</th>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <meter id="ws" value="0" min="0" max="100">0</meter>
+          <span id="per"> 0%</span>
+        </td>
+        <td colspan="2"><span id="exe"></span></td>
+      </tr>
+      <tr>
+        <th colspan="2">Duration (Sec)</th>
+        <th colspan="2">Remaining (Sec)</th>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <span id="wd">0</span>
+        </td>
+        <td colspan="2">
+          <span id="rem">0</span>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="2">Span(sec)</th>
+        <th colspan="2">Rest(sec)</th>
+      </tr>
+      <tr>
+        <td colspan="2"><span id="wsn">0</span></td>
+        <td colspan="2"><span id="wkr">0</span></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <progress id="wtsn" value="0" max="100">0%</progress>
+        </td>
+        <td colspan="2">
+          <progress id="wtrt" value="0" max="100">0%</progress>
+        </td>
+      </tr>
+    </table>
+    <input id="stWt" type="button" value="START" onclick="start()" />
+    <input id="spWt" type="button" value="STOP" onclick="stop()" disabled />
+    <input id="shre" type="button" onclick="share()" value="SHARE" />
+    <h2 id="lg">Log_</h2>
+    <table id="logTbl">
+      <tr>
+        <th>Workout Pattern</th>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+    </table>
+    <footer>
+      <input id="btnRst" type="button" value="CLEAR" onclick="rstLog()" />
+   <input id="btnDlog" type="button" value="DUMMY" onclick="dLog()" />
+    </footer>
+<script src="test.js"></script>
+</body>
+</html>
