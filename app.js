@@ -1,5 +1,4 @@
 try {
-
 	function reProgram() {
 
 		if (typeof(Storage) !== "undefined") {
