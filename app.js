@@ -135,8 +135,8 @@ try {
 			if (localStorage.length > 0) {
 				// Code for localStorage/sessionStorage.
 				var table = delTbl();
-				const fdte = new Date();
-				let day = fdte.getDate();
+				//const fdte = new Date();
+				let day = new Date();
 				let arObj = [];
 				for (i = 0; i < localStorage.length; i++) {
 					let key = "";
