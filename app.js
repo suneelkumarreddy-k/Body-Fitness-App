@@ -143,9 +143,9 @@ try {
 					if (localStorage.key(i) != "rpm") {
 						key = localStorage.key(i);
 
-						const dte = new Date(key); let mdte = day.setDate(day.getDate() - 6);
+						const dte = new Date(key); day = day.setDate(day.getDate() - 6);
 
-						if (dte.toLocaleDateString() >= mdte.toLocaleDateString()) {
+						if (dte.toLocaleDateString() >= day.toLocaleDateString()) {
 							/*var row = table.insertRow(i + 1);
 							var cell1 = row.insertCell(0);
 							var cell2 = row.insertCell(1);*/
