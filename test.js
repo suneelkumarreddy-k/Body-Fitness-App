@@ -373,7 +373,7 @@ try {
 
 
 function secOps(obj) {
-if (obj.id === "btnPgm") {
+if (obj.id === "btnPrm") {
 let secSa = document.getElementById("schema");
 let secTr = document.getElementById("tracker");
 let secLg = document.getElementById("log");
@@ -426,7 +426,7 @@ let secLg = document.getElementById("log");
 		alert("Programmed");
 		//var elmnt = document.getElementById("exe");
 		//elmnt.scrollIntoView();
-                secOps(document.getElementById("btnPgm"));
+                secOps(document.getElementById("btnPrm"));
 	}
 	//document.getElementById("spWt").disabled = true;
 	let wrktSpn;
