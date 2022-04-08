@@ -371,6 +371,35 @@ try {
 		}
 	}
 
+
+function secOps(obj) {
+if (obj.id === "btnPgm") {
+let secSa = document.getElementById("schema");
+let secTr = document.getElementById("tracker");
+let secLg = document.getElementById("log");
+
+    secSa.style.display = "none";    
+    secLg.style.display = "none";
+    secTr.style.display = "block";
+} else if (obj.id === "btnRpgm") {
+let secSa = document.getElementById("schema");
+let secTr = document.getElementById("tracker");
+let secLg = document.getElementById("log");
+    secLg.style.display = "none";
+    secTr.style.display = "none";
+    secSa.style.display = "block";    
+    
+} else {
+let secSa = document.getElementById("schema");
+let secTr = document.getElementById("tracker");
+let secLg = document.getElementById("log");
+    
+    secTr.style.display = "none";
+    secSa.style.display = "none";    
+    secLg.style.display = "block";
+} 
+}
+
 	function pgm() {
 		//alert();
 		var start = performance.now();
@@ -397,6 +426,7 @@ try {
 		alert("Programmed");
 		var elmnt = document.getElementById("exe");
 		elmnt.scrollIntoView();
+  
 	}
 	//document.getElementById("spWt").disabled = true;
 	let wrktSpn;
