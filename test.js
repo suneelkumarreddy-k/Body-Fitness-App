@@ -381,7 +381,7 @@ let secLg = document.getElementById("log");
     secSa.style.display = "none";    
     secLg.style.display = "none";
     secTr.style.display = "block";
-} else if (obj.id === "btnRpgm") {
+} else if (obj.id === "btnSma") {
 let secSa = document.getElementById("schema");
 let secTr = document.getElementById("tracker");
 let secLg = document.getElementById("log");
@@ -424,9 +424,9 @@ let secLg = document.getElementById("log");
 		window.speechSynthesis.cancel();
 		window.speechSynthesis.speak(new SpeechSynthesisUtterance('Programmed'));
 		alert("Programmed");
-		var elmnt = document.getElementById("exe");
-		elmnt.scrollIntoView();
-  
+		//var elmnt = document.getElementById("exe");
+		//elmnt.scrollIntoView();
+                secOps(document.getElementById("btnPgm"));
 	}
 	//document.getElementById("spWt").disabled = true;
 	let wrktSpn;
