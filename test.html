@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="test.css" />
   <title>Test</title>
 </head>
 <body>
@@ -63,6 +63,7 @@
       <input type="button" value="RANDOMIZE" id="btnRdm" onclick="shAr()" />
       <input type="button" value="PUMP DUMP" id="btnPmp" onclick="pump()" />
       <input type="button" value="REPROGRAM" id="btnRpm" onclick="reProgram()" />
+ <input type="button" value="LOG" id="btnLog" onclick="secOps(this)" />
       <input type="submit" value="PROGRAM" id="btnPrm" />
     </form> 
 </section>
@@ -131,6 +132,8 @@
     <input id="stWt" type="button" value="START" onclick="start()" />
     <input id="spWt" type="button" value="STOP" onclick="stop()" disabled />
     <input id="shre" type="button" onclick="share()" value="SHARE" />
+<input type="button" value="LOG" id="btnLog" onclick="secOps(this)" />
+<input type="button" value="SCHEMA" id="btnSma" onclick="secOps(this)" />
     </section>
 <section id="log">
 <h2 id="lg">Log_</h2>
@@ -145,6 +148,7 @@
 
       <input id="btnRst" type="button" value="CLEAR" onclick="rstLog()" />
    <input id="btnDlog" type="button" value="DUMMY" onclick="dLog()" />
+<input type="button" value="SCHEMA" id="btnSma" onclick="secOps(this)" />
    </section>
 <script src="test.js"></script>
 </body>
