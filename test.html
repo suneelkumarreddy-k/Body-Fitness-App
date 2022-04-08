@@ -9,7 +9,8 @@
 <body>
 <noscript> <b>Hint</b> : JavaScript disabled 😎 </noscript>
     <h1>Body Fitness Program (test) </h1>
-    <h2 id="sa">Schema_</h2>
+    <section id="schema">
+<h2 id="sa">Schema_</h2>
     <form onsubmit="pgm();return false">
       <!--<label for="wp">Workout Pattern (Reps(no) Sets(no) Span(sec) Rest(sec) = 01 01 01 01):</label>
 		<input id="wp" type="text" name="pattern" placeholder="Enter Workout Pattern" onfocusout="p(this)" oninvalid="this.setCustomValidity('Reps Sets Span Rest 20 5 60 30')" oninput="this.setCustomValidity('');f(this)" required pattern="[0-9 ]+" onfocus="f(this)">
@@ -63,7 +64,9 @@
       <input type="button" value="PUMP DUMP" id="btnPmp" onclick="pump()" />
       <input type="button" value="REPROGRAM" id="btnRpm" onclick="reProgram()" />
       <input type="submit" value="PROGRAM" id="btnPrm" />
-    </form>
+    </form> 
+</section>
+<section id="tracker">
     <h2 id="tr">Tracker_</h2>
     <table>
       <tr>
@@ -128,7 +131,9 @@
     <input id="stWt" type="button" value="START" onclick="start()" />
     <input id="spWt" type="button" value="STOP" onclick="stop()" disabled />
     <input id="shre" type="button" onclick="share()" value="SHARE" />
-    <h2 id="lg">Log_</h2>
+    </section>
+<section id="log">
+<h2 id="lg">Log_</h2>
     <table id="logTbl">
       <tr>
         <th>Workout Pattern</th>
@@ -137,10 +142,10 @@
         <td></td>
       </tr>
     </table>
-    <footer>
+
       <input id="btnRst" type="button" value="CLEAR" onclick="rstLog()" />
    <input id="btnDlog" type="button" value="DUMMY" onclick="dLog()" />
-    </footer>
+   </section>
 <script src="test.js"></script>
 </body>
 </html>
