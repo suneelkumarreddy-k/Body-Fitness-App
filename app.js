@@ -4,7 +4,7 @@ try {
 		if (typeof(Storage) !== "undefined") {
 			localStorage.rpm = "true";
 			if (localStorage.length > 1) {
-if (confirm("Daily Routine?") {
+if (confirm("Daily Routine?")) {
 				//alert(localStorage.getItem("rpm"));
 				const fdte = new Date();
 				let day = fdte;
