@@ -180,9 +180,9 @@ try {
 								document.getElementById("spn").value = wDta.span;
 								document.getElementById("rst").value = wDta.rest;
 								alert("Workout Planned");
-								let elt = document.getElementById("sa");
-								elt.scrollIntoView();
-								navigator.vibrate(200);
+								let elt = document.getElementById("btnSma");secOps(elt);
+								//elt.scrollIntoView();
+								//navigator.vibrate(200);
 							}
 						}
 					}
