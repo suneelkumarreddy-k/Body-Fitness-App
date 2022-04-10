@@ -2,7 +2,7 @@ try {
 	function reProgram() {
 
 		if (typeof(Storage) !== "undefined") {
-			localStorage.rpm = "true";
+			
 			if (localStorage.length > 1) {
 
 				//alert(localStorage.getItem("rpm"));
@@ -57,16 +57,21 @@ try {
 					document.getElementById("spn").value = flObj[0].span;
 					document.getElementById("rst").value = flObj[0].rest;
 					document.getElementById("wt").value = flObj[0].workout;
-				} else {
-					alert("Try Later!");
-				}
-			} else {
-				localStorage.rpm = "false";
-			}
+				} 
+			} 
 		}
 	}
 
-	function ldPgm() {
+	function routine () {
+let dyRe = document.getElementById("chkRe");
+if (dyRe.checked) {
+localStorage.rpm = "true";
+} else {
+localStorage.rpm = "false";
+}
+}
+
+function ldPgm() {
 		if (localStorage.getItem("rpm") == "true")
 			reProgram();
 	}
