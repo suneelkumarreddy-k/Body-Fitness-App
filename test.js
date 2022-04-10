@@ -475,7 +475,7 @@ try {
 			window.speechSynthesis.cancel();
 			document.getElementById("spWt").disabled = false;
 			document.getElementById("btnSma").disabled = true;
-			document.getElementById("btnLog").disabled = true;
+			document.getElementById("btnLg").disabled = true;
 			document.getElementById("stWt").disabled = true;
 			
 			document.getElementById("shre").disabled = true;
@@ -589,7 +589,7 @@ try {
 		
 		document.getElementById("spWt").disabled = true;
 		document.getElementById("stWt").disabled = false;
-		document.getElementById("btnLog").disabled = false;
+		document.getElementById("btnLg").disabled = false;
 		document.getElementById("btnSma").disabled = false;
 		
 		document.getElementById("shre").disabled = false;
