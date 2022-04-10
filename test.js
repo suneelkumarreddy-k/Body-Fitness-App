@@ -474,11 +474,10 @@ try {
 		if (wrkTotal >= 4) {
 			window.speechSynthesis.cancel();
 			document.getElementById("spWt").disabled = false;
-			document.getElementById("btnPmp").disabled = true;
-			document.getElementById("btnPrm").disabled = true;
+			document.getElementById("btnSma").disabled = true;
+			document.getElementById("btnLog").disabled = true;
 			document.getElementById("stWt").disabled = true;
-			document.getElementById("btnRdm").disabled = true;
-			document.getElementById("btnRst").disabled = true;
+			
 			document.getElementById("shre").disabled = true;
 			let wrkTtl = 0;
 			let spnCnt = 0;
@@ -587,12 +586,12 @@ try {
 
 	function stpTkr() {
 		clearInterval(wrktSpn);
-		document.getElementById("btnPrm").disabled = false;
+		
 		document.getElementById("spWt").disabled = true;
 		document.getElementById("stWt").disabled = false;
-		document.getElementById("btnRdm").disabled = false;
-		document.getElementById("btnPmp").disabled = false;
-		document.getElementById("btnRst").disabled = false;
+		document.getElementById("btnLog").disabled = false;
+		document.getElementById("btnSma").disabled = false;
+		
 		document.getElementById("shre").disabled = false;
 	}
 } catch (err) {
