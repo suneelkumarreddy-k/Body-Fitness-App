@@ -2,7 +2,7 @@ try {
 	function reProgram() {
 
 		if (typeof(Storage) !== "undefined") {
-			
+
 			if (localStorage.length > 1) {
 
 				//alert(localStorage.getItem("rpm"));
@@ -11,10 +11,11 @@ try {
 				let arObj = [];
 				let tdy = false;
 				for (i = 0; i < localStorage.length; i++) {
-					let key = localStorage.key(i);const dte = new Date(key);
+					let key = localStorage.key(i);
+					const dte = new Date(key);
 					if ((dte.constructor.toString().indexOf("Date") > -1)) {
 						//alert(key);
-						
+
 
 						if (dte < day) {
 							let jsnObj = JSON.parse(localStorage.getItem(key));
@@ -57,43 +58,44 @@ try {
 					document.getElementById("spn").value = flObj[0].span;
 					document.getElementById("rst").value = flObj[0].rest;
 					document.getElementById("wt").value = flObj[0].workout;
-				} 
-			} 
+				}
+			}
 		}
 	}
 
-	function routine () {
-let dyRe = document.getElementById("chkRe");
-if (dyRe.checked) {
-localStorage.rpm = "true";
-} else {
-localStorage.rpm = "false";
-}
-}
+	function routine() {
+		let dyRe = document.getElementById("chkRe");
+		if (dyRe.checked) {
+			localStorage.rpm = "true";
+		} else {
+			localStorage.rpm = "false";
+		}
+	}
 
-function random() {
-let wtRe = document.getElementById("chkRm");
-if (wtRe.checked) {
-localStorage.wre = "true";
-} else {
-localStorage.wre = "false";
-}
-}
+	function random() {
+		let wtRe = document.getElementById("chkRm");
+		if (wtRe.checked) {
+			localStorage.wre = "true";
+		} else {
+			localStorage.wre = "false";
+		}
+	}
 
-function ldPgm() {
-let dyRe = document.getElementById("chkRe");
-let wtRe = document.getElementById("chkRm");
+	function ldPgm() {
+		let dyRe = document.getElementById("chkRe");
+		let wtRe = document.getElementById("chkRm");
 		if (localStorage.getItem("rpm") == "true") {
-dyRe.checked = true; reProgram();
-} else {
-dyRe.checked = false;
-}
-if (localStorage.getItem("wre") == "true") {
-wtRe.checked = true;
-} else {
-wtRe.checked = false;
-}
-}
+			dyRe.checked = true;
+			reProgram();
+		} else {
+			dyRe.checked = false;
+		}
+		if (localStorage.getItem("wre") == "true") {
+			wtRe.checked = true;
+		} else {
+			wtRe.checked = false;
+		}
+	}
 
 	function pump() {
 		if (Number(document.getElementById("rps").value) >= 1 && Number(document.getElementById("sts").value) >= 1 && Number(document.getElementById("spn").value) >= 1) {
@@ -162,18 +164,19 @@ wtRe.checked = false;
 				let day = new Date();
 				let arObj = [];
 				for (i = 0; i < localStorage.length; i++) {
-					let key = localStorage.key(i); const dte = new Date(key); 
+					let key = localStorage.key(i);
+					const dte = new Date(key);
 					if ((dte.constructor.toString().indexOf("Date") > -1)) {
-						
+
 
 						day.setDate(day.getDate() - 6);
 
 						if (dte >= day) {
-							
+
 							let jsnObj = JSON.parse(localStorage.getItem(key));
 							arObj.push(jsnObj);
 
-						} 
+						}
 					}
 				}
 				arObj = arObj.sort(function(a, b) {
@@ -204,7 +207,8 @@ wtRe.checked = false;
 								document.getElementById("spn").value = wDta.span;
 								document.getElementById("rst").value = wDta.rest;
 								alert("Workout Planned");
-								let elt = document.getElementById("btnSma");secOps(elt);
+								let elt = document.getElementById("btnSma");
+								secOps(elt);
 								//elt.scrollIntoView();
 								//navigator.vibrate(200);
 							}
@@ -339,34 +343,34 @@ wtRe.checked = false;
 	grtMsg();
 	// Randomize workout sets
 	function rndWrt() {
-		
+
 		var wte = document.getElementById("wt").value;
-			let wv = wte.split(",");
-			let sg = "";
-			let i = 0;
-			while (wv[i]) {
-				if (Number.isInteger(Number(wv[i]))) {
-					sg += "#";
-				} else {
-					sg += wv[i] + " ";
-				}
+		let wv = wte.split(",");
+		let sg = "";
+		let i = 0;
+		while (wv[i]) {
+			if (Number.isInteger(Number(wv[i]))) {
+				sg += "#";
+			} else {
+				sg += wv[i] + " ";
+			}
+			i++;
+		}
+		sg = sg.split("#");
+		sg.pop();
+		sg = Array.isArray(sg) && (sg.length > 0) ? sg.sort(() => Math.random() - 0.5) : wte;
+		if (Array.isArray(sg)) {
+			i = 0;
+			let rz = [];
+			while (sg[i]) {
+				rz.push(String(sg[i]).trim());
+				rz.push(i + 1);
 				i++;
 			}
-			sg = sg.split("#");
-			sg.pop();
-			sg = Array.isArray(sg) && (sg.length > 0) ? sg.sort(() => Math.random() - 0.5) : wte;
-			if (Array.isArray(sg)) {
-				i = 0;
-				let rz = [];
-				while (sg[i]) {
-					rz.push(String(sg[i]).trim());
-					rz.push(i + 1);
-					i++;
-				}
-				//alert("Array: " + Array.isArray(rz) + " len: "+rz.length+" data: "+rz);
-				document.getElementById("wt").value = rz;
-			}
-		
+			//alert("Array: " + Array.isArray(rz) + " len: "+rz.length+" data: "+rz);
+			document.getElementById("wt").value = rz;
+		}
+
 	}
 
 	/*function p(obj) {
@@ -392,44 +396,45 @@ wtRe.checked = false;
 	}
 
 
-function secOps(obj) {
-if (obj.id === "btnPrm") {
-let secSa = document.getElementById("schema");
-let secTr = document.getElementById("tracker");
-let secLg = document.getElementById("log");
+	function secOps(obj) {
+		if (obj.id === "btnPrm") {
+			let secSa = document.getElementById("schema");
+			let secTr = document.getElementById("tracker");
+			let secLg = document.getElementById("log");
 
-    secSa.style.display = "none";    
-    secLg.style.display = "none";
-    secTr.style.display = "block";
-    secTr.scrollIntoView();
-} else if (obj.id === "btnSma") {
-let secSa = document.getElementById("schema");
-let secTr = document.getElementById("tracker");
-let secLg = document.getElementById("log");
-    secLg.style.display = "none";
-    secTr.style.display = "none";
-    secSa.style.display = "block";    
-    secSa.scrollIntoView();
-} else {
-let secSa = document.getElementById("schema");
-let secTr = document.getElementById("tracker");
-let secLg = document.getElementById("log");
-    
-    secTr.style.display = "none";
-    secSa.style.display = "none";    
-    secLg.style.display = "block";
-    secLg.scrollIntoView();
-} 
-}
+			secSa.style.display = "none";
+			secLg.style.display = "none";
+			secTr.style.display = "block";
+			secTr.scrollIntoView();
+		} else if (obj.id === "btnSma") {
+			let secSa = document.getElementById("schema");
+			let secTr = document.getElementById("tracker");
+			let secLg = document.getElementById("log");
+			secLg.style.display = "none";
+			secTr.style.display = "none";
+			secSa.style.display = "block";
+			secSa.scrollIntoView();
+		} else {
+			let secSa = document.getElementById("schema");
+			let secTr = document.getElementById("tracker");
+			let secLg = document.getElementById("log");
+
+			secTr.style.display = "none";
+			secSa.style.display = "none";
+			secLg.style.display = "block";
+			secLg.scrollIntoView();
+		}
+	}
 
 	function pgm() {
 		//alert();
-let wtRe = document.getElementById("chkRm");
+		let wtRe = document.getElementById("chkRm");
 		if (localStorage.getItem("wre") == "true") {
-wtRe.checked = true; rndWrt();
-} else {
-wtRe.checked = false;
-}
+			wtRe.checked = true;
+			rndWrt();
+		} else {
+			wtRe.checked = false;
+		}
 		var start = performance.now();
 		//let wp = document.getElementById("wp").value;
 		var wt = document.getElementById("wt").value;
@@ -454,7 +459,7 @@ wtRe.checked = false;
 		alert("Programmed");
 		//var elmnt = document.getElementById("exe");
 		//elmnt.scrollIntoView();
-                secOps(document.getElementById("btnPrm"));
+		secOps(document.getElementById("btnPrm"));
 	}
 	//document.getElementById("spWt").disabled = true;
 	let wrktSpn;
