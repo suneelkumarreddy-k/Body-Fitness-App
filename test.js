@@ -11,10 +11,10 @@ try {
 				let arObj = [];
 				let tdy = false;
 				for (i = 0; i < localStorage.length; i++) {
-					let key = localStorage.key(i);
-					if (key != "rpm") {
+					let key = localStorage.key(i);const dte = new Date(key);
+					if (!(dte.constructor.toString().indexOf("Date") > -1)) {
 						//alert(key);
-						const dte = new Date(key);
+						
 
 						if (dte.getTime() < day.getTime()) {
 							let jsnObj = JSON.parse(localStorage.getItem(key));
@@ -71,14 +71,29 @@ localStorage.rpm = "false";
 }
 }
 
+function random() {
+let wtRe = document.getElementById("chkRm");
+if (wtRe.checked) {
+localStorage.wre = "true";
+} else {
+localStorage.wre = "false";
+}
+}
+
 function ldPgm() {
 let dyRe = document.getElementById("chkRe");
+let wtRe = document.getElementById("chkRm");
 		if (localStorage.getItem("rpm") == "true") {
 dyRe.checked = true; reProgram();
 } else {
 dyRe.checked = false;
 }
-	}
+if (localStorage.getItem("wre") == "true") {
+wtRe.checked = true;
+} else {
+wtRe.checked = false;
+}
+}
 
 	function pump() {
 		if (Number(document.getElementById("rps").value) >= 1 && Number(document.getElementById("sts").value) >= 1 && Number(document.getElementById("spn").value) >= 1) {
@@ -323,11 +338,9 @@ dyRe.checked = false;
 	}
 	grtMsg();
 	// Randomize workout sets
-	function shAr() {
-		let cMsg = "Randomize Workout Variations ?";
-
+	function rndWrt() {
+		
 		var wte = document.getElementById("wt").value;
-		if (confirm(cMsg) && wte.trim() != "") {
 			let wv = wte.split(",");
 			let sg = "";
 			let i = 0;
@@ -353,9 +366,7 @@ dyRe.checked = false;
 				//alert("Array: " + Array.isArray(rz) + " len: "+rz.length+" data: "+rz);
 				document.getElementById("wt").value = rz;
 			}
-		} else {
-			document.getElementById("wt").focus();
-		}
+		
 	}
 
 	/*function p(obj) {
@@ -413,6 +424,12 @@ let secLg = document.getElementById("log");
 
 	function pgm() {
 		//alert();
+let wtRe = document.getElementById("chkRm");
+		if (localStorage.getItem("wre") == "true") {
+wtRe.checked = true; rndWrt();
+} else {
+wtRe.checked = false;
+}
 		var start = performance.now();
 		//let wp = document.getElementById("wp").value;
 		var wt = document.getElementById("wt").value;
