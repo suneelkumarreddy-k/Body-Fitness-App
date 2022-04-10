@@ -72,8 +72,12 @@ localStorage.rpm = "false";
 }
 
 function ldPgm() {
-		if (localStorage.getItem("rpm") == "true")
-			reProgram();
+let dyRe = document.getElementById("chkRe");
+		if (localStorage.getItem("rpm") == "true") {
+dyRe.checked = true; reProgram();
+} else {
+dyRe.checked = false;
+}
 	}
 
 	function pump() {
