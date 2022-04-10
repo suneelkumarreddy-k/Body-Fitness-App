@@ -381,6 +381,7 @@ let secLg = document.getElementById("log");
     secSa.style.display = "none";    
     secLg.style.display = "none";
     secTr.style.display = "block";
+    secTr.scrollIntoView();
 } else if (obj.id === "btnSma") {
 let secSa = document.getElementById("schema");
 let secTr = document.getElementById("tracker");
@@ -388,7 +389,7 @@ let secLg = document.getElementById("log");
     secLg.style.display = "none";
     secTr.style.display = "none";
     secSa.style.display = "block";    
-    
+    secSa.scrollIntoView();
 } else {
 let secSa = document.getElementById("schema");
 let secTr = document.getElementById("tracker");
@@ -397,6 +398,7 @@ let secLg = document.getElementById("log");
     secTr.style.display = "none";
     secSa.style.display = "none";    
     secLg.style.display = "block";
+    secLg.scrollIntoView();
 } 
 }
 
