@@ -162,13 +162,13 @@ wtRe.checked = false;
 				let day = new Date();
 				let arObj = [];
 				for (i = 0; i < localStorage.length; i++) {
-					let key = "";
-					if (localStorage.key(i) != "rpm") {
-						key = localStorage.key(i);
+					let key = localStorage.key(i); const dte = new Date(key); 
+					if ((dte.constructor.toString().indexOf("Date") > -1)) {
+						
 
-						const dte = new Date(key); day.setDate(day.getDate() - 6);
+						day.setDate(day.getDate() - 6);
 
-						if (dte.getTime() >= day.getTime()) {
+						if (dte >= day) {
 							
 							let jsnObj = JSON.parse(localStorage.getItem(key));
 							arObj.push(jsnObj);
