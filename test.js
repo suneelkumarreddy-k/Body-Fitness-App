@@ -12,7 +12,7 @@ try {
 				let tdy = false;
 				for (i = 0; i < localStorage.length; i++) {
 					let key = localStorage.key(i);const dte = new Date(key);
-					if (!(dte.constructor.toString().indexOf("Date") > -1)) {
+					if ((dte.constructor.toString().indexOf("Date") > -1)) {
 						//alert(key);
 						
 
