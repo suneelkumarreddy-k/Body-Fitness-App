@@ -345,7 +345,7 @@ try {
 	function rndWrt() {
 
 		var wte = document.getElementById("wt").value;
-		let wv = wte.split(",");
+		let wv = wte.split(","); let nwrt = "";
 		let sg = "";
 		let i = 0;
 		while (wv[i]) {
@@ -368,9 +368,9 @@ try {
 				i++;
 			}
 			//alert("Array: " + Array.isArray(rz) + " len: "+rz.length+" data: "+rz);
-			document.getElementById("wt").value = rz;
+			nwrt = rz;
 		}
-
+              return nwrt; 
 	}
 
 	/*function p(obj) {
@@ -428,16 +428,16 @@ try {
 
 	function pgm() {
 		//alert();
-		let wtRe = document.getElementById("chkRm");
+		let wtRe = document.getElementById("chkRm"); let nwrt = "";
 		if (localStorage.getItem("wre") == "true") {
 			wtRe.checked = true;
-			rndWrt();
+			nwrt = rndWrt();
 		} else {
 			wtRe.checked = false;
 		}
 		var start = performance.now();
 		//let wp = document.getElementById("wp").value;
-		var wt = document.getElementById("wt").value;
+		let wt = nwrt != "" ? nwrt : document.getElementById("wt").value;
 		wt = wt.split(',').filter(s => String(s).trim());
 		//wp = wp.trim();
 
