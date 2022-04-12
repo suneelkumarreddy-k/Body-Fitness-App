@@ -368,9 +368,9 @@ try {
 				i++;
 			}
 			//alert("Array: " + Array.isArray(rz) + " len: "+rz.length+" data: "+rz);
-			nwrt = rz;
+			document.getElementById("wt").value = rz;
 		}
-              return nwrt; 
+              //return nwrt; 
 	}
 
 	/*function p(obj) {
@@ -428,16 +428,16 @@ try {
 
 	function pgm() {
 		//alert();
-		let wtRe = document.getElementById("chkRm"); let nwrt = "";
+		let wtRe = document.getElementById("chkRm");
 		if (localStorage.getItem("wre") == "true") {
 			wtRe.checked = true;
-			nwrt = rndWrt();
+			rndWrt();
 		} else {
 			wtRe.checked = false;
 		}
 		var start = performance.now(); alert(nwrt);
 		//let wp = document.getElementById("wp").value;
-		let wt = nwrt != "" ? nwrt : document.getElementById("wt").value; alert(wt);
+		let wt = document.getElementById("wt").value;
 		wt = wt.split(',').filter(s => String(s).trim());
 		//wp = wp.trim();
 
