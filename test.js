@@ -341,6 +341,7 @@ try {
 			alert(greet);
 	}
 	grtMsg();
+
 	// Randomize workout sets
 	function rndWrt() {
 
@@ -368,9 +369,9 @@ try {
 				i++;
 			}
 			//alert("Array: " + Array.isArray(rz) + " len: "+rz.length+" data: "+rz);
-			document.getElementById("wt").value = rz;
+			document.getElementById("wt").value = nwrt = rz;
 		}
-              //return nwrt; 
+              alert(nwrt); 
 	}
 
 	/*function p(obj) {
@@ -435,7 +436,7 @@ try {
 		} else {
 			wtRe.checked = false;
 		}
-		var start = performance.now(); alert(nwrt);
+		var start = performance.now();
 		//let wp = document.getElementById("wp").value;
 		let wt = document.getElementById("wt").value;
 		wt = wt.split(',').filter(s => String(s).trim());
