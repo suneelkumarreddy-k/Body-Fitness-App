@@ -435,9 +435,9 @@ try {
 		} else {
 			wtRe.checked = false;
 		}
-		var start = performance.now();
+		var start = performance.now(); alert(nwrt);
 		//let wp = document.getElementById("wp").value;
-		let wt = nwrt != "" ? nwrt : document.getElementById("wt").value;
+		let wt = nwrt != "" ? nwrt : document.getElementById("wt").value; alert(wt);
 		wt = wt.split(',').filter(s => String(s).trim());
 		//wp = wp.trim();
 
