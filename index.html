@@ -653,7 +653,7 @@ try {
 
 	// Randomize workout sets
 	function rndWrt() {
-
+/*
 		var wte = document.getElementById("wt").value;
 		let wv = wte.split(","); let nwrt = "";
 		let sg = "";
@@ -680,7 +680,11 @@ try {
 			//alert("Array: " + Array.isArray(rz) + " len: "+rz.length+" data: "+rz);
 			document.getElementById("wt").value = nwrt = rz;
 		}
-              alert(nwrt); 
+              alert(nwrt); */
+var wte = document.getElementById("wt").value;
+		let wv = wte.split(",").filter(e => String(e).trim()); 
+let nwrt = wv.sort(() => Math.random() - 0.5);
+return nwrt;
 	}
 
 	/*function p(obj) {
@@ -737,7 +741,7 @@ try {
 	}
 
 	function pgm() {
-		//alert();
+		//alert();/*
 		let wtRe = document.getElementById("chkRm");
 		if (localStorage.getItem("wre") == "true") {
 			wtRe.checked = true;
@@ -750,6 +754,19 @@ try {
 		let wt = document.getElementById("wt").value;
 		wt = wt.split(',').filter(s => String(s).trim());
 		//wp = wp.trim();
+*/
+let wt;
+		let wtRe = document.getElementById("chkRm");
+		if (localStorage.getItem("wre") == "true") {
+			wtRe.checked = true;
+			wt = rndWrt();
+			//alert(wt);
+//document.getElementById("wrt").innerText = rnzWrkt;
+		} else {
+			wtRe.checked = false;
+			wt = document.getElementById("wt").value;
+wt = wt.split(',').filter(s => String(s).trim());
+		}
 
 		document.getElementById("wrt").innerText = wt;
 		document.getElementById("reps").innerText = document.getElementById("rps").value;
