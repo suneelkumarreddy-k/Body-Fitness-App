@@ -817,6 +817,7 @@ wt = wt.split(',').filter(s => String(s).trim());
 			wrktSpn = setInterval(strtSpn, 1000);
 			let spnCt = 0;
 			let setCnt = 0;
+/*
 			var wte = String(document.getElementById("wrt").innerText).split(",").filter(e => String(e).trim());
 			let wv = wte;
 			let sg = "";
@@ -831,7 +832,9 @@ wt = wt.split(',').filter(s => String(s).trim());
 			}
 			sg = sg.split("#");
 			sg.pop();
-			sg = Array.isArray(sg) && (sg.length > 0) ? sg : wte;
+			sg = Array.isArray(sg) && (sg.length > 0) ? sg : wte;*/
+let wte = document.getElementById("wrt").innerText;
+			let sg = wte.split(",").filter(e => String(e).trim());
 			let mge = Array.isArray(sg) ? ("Do " + sg[0]) : ("Do " + sg);
 			mge += reps > 0 ? (" " + reps + " Reps") : "";
 			//alert(Array.isArray(sg) +" len: "+sg.length + " data: " + sg);
