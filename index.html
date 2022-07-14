@@ -201,7 +201,30 @@ display : none;
         onfocus="f(this)"
         oninput="f(this)" rows="10"
       ></textarea>
-      <table>
+      
+
+      <!--<label for="wt">Workout (Type, Set (no)(asc) = Push-ups, 1) :</label>-->
+      
+<!-- Rounded switch -->
+
+<label class="switch">
+  <input type="checkbox" id="chkRe" onclick="routine()">
+  <span class="slider round"></span>
+</label>
+ <label for="chkRe">ROUTINE</label>
+
+<label class="switch">
+  <input type="checkbox" id="chkRm" onclick="random()">
+  <span class="slider round"></span>
+</label>
+ <label for="chkRm">RANDOMIZE</label>
+      <!--<input type="button" value="RANDOMIZE" id="btnRdm" onclick="shAr()" />-->
+      <input type="button" value="PUMP DUMP" id="btnPmp" onclick="pump()" />
+     <!-- <input type="button" value="REPROGRAM" id="btnRpm" onclick="reProgram()" />-->
+ <input type="button" value="LOG" id="btnLog" onclick="secOps(this)" />
+      <input type="submit" value="PROGRAM" id="btnPrm" />
+    </form> 
+<table>
        <tr> <th colspan="4">Workout Guide</th></tr>
         <tr>
           <th>Reps</th>
@@ -231,28 +254,6 @@ display : none;
 <td colspan="2">6 to 15 Sets / Week</td>
 </tr>
       </table>
-
-      <!--<label for="wt">Workout (Type, Set (no)(asc) = Push-ups, 1) :</label>-->
-      
-<!-- Rounded switch -->
-
-<label class="switch">
-  <input type="checkbox" id="chkRe" onclick="routine()">
-  <span class="slider round"></span>
-</label>
- <label for="chkRe">ROUTINE</label>
-
-<label class="switch">
-  <input type="checkbox" id="chkRm" onclick="random()">
-  <span class="slider round"></span>
-</label>
- <label for="chkRm">RANDOMIZE</label>
-      <!--<input type="button" value="RANDOMIZE" id="btnRdm" onclick="shAr()" />-->
-      <input type="button" value="PUMP DUMP" id="btnPmp" onclick="pump()" />
-     <!-- <input type="button" value="REPROGRAM" id="btnRpm" onclick="reProgram()" />-->
- <input type="button" value="LOG" id="btnLog" onclick="secOps(this)" />
-      <input type="submit" value="PROGRAM" id="btnPrm" />
-    </form> 
 </section>
 <section id="tracker">
     <h2 id="tr">Tracker_</h2>
