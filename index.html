@@ -867,6 +867,17 @@ wt = wt.split(',').filter(s => String(s).trim());
 			sg = Array.isArray(sg) && (sg.length > 0) ? sg : wte;*/
 let wte = document.getElementById("wrt").innerText;
 			let sg = wte.split(",").filter(e => String(e).trim());
+let fnSts = [];
+			//alert(Array.isArray(sg));
+			if (Array.isArray(sg) && sg.length < sets) {
+			for (i = 0; i < sets/sg.length; i++) {
+			  for (j=0; j < sg.length; j++) {
+			   if (sg [j] != undefined) {
+			    fnSts.push(sg[j]);
+			   }
+			  }
+			}
+			}
 			let mge = Array.isArray(sg) ? ("Do " + sg[0]) : ("Do " + sg);
 			mge += reps > 0 ? (" " + reps + " Reps") : "";
 			//alert(Array.isArray(sg) +" len: "+sg.length + " data: " + sg);
@@ -896,10 +907,16 @@ let wte = document.getElementById("wrt").innerText;
 							//const set = wv.slice(wv.indexOf(setCnt),wv.indexOf(setCnt+1));
 							//alert(sg[setCnt]);
 							let mse = (Array.isArray(sg) && (sg.length > 1)) ? sg[setCnt] : (Array.isArray(sg) && (sg.length <= 1)) ? sg[0] : wte;
-							mse = mse == undefined ? "" : mse;
+							//mse = mse == undefined ? "" : mse;
+if (mse === undefined) {
+							 //document.getElementById("exe1").innerText = 
+							 mse = fnSts[setCnt];
+							}
 							mse += reps > 0 ? (" " + reps + " Reps") : "";
 							window.speechSynthesis.speak(new SpeechSynthesisUtterance(mse));
-							document.getElementById("exe").innerText = ((Array.isArray(sg) && (sg.length > 1)) ? sg[setCnt] : (Array.isArray(sg) && (sg.length <= 1)) ? sg[0] : wte) + ", " + (setCnt + 1);
+							document.getElementById("exe").innerText = (Array.isArray(sg) && (sg.length > 1) && (sg[setCnt] != undefined) ? sg[setCnt] : fnSts[setCnt]); // 
+							document.getElementById("exe").innerText = ", " + (setCnt+1);
+//document.getElementById("exe").innerText = ((Array.isArray(sg) && (sg.length > 1)) ? sg[setCnt] : (Array.isArray(sg) && (sg.length <= 1)) ? sg[0] : wte) + ", " + (setCnt + 1);
 						}
 
 					} else if (span * sets > 0) {
@@ -919,10 +936,16 @@ let wte = document.getElementById("wrt").innerText;
 								spnCnt = 0;
 								// document.getElementById("wtsn").value = spnCnt+1;
 								let mse = (Array.isArray(sg) && (sg.length > 1)) ? sg[setCnt] : (Array.isArray(sg) && (sg.length <= 1)) ? sg[0] : wte;
-								mse = mse == undefined ? "" : mse;
+								//mse = mse == undefined ? "" : mse;
+if (mse === undefined) {
+								  //document.getElementById("exe1").innerText =
+								  mse = fnSts[setCnt]  ;
+								}
 								mse += reps > 0 ? (" " + reps + " Reps") : "";
 								window.speechSynthesis.speak(new SpeechSynthesisUtterance(mse));
-								document.getElementById("exe").innerText = ((Array.isArray(sg) && (sg.length > 1)) ? sg[setCnt] : (Array.isArray(sg) && (sg.length <= 1)) ? sg[0] : wte) + ", " + (setCnt + 1);
+								document.getElementById("exe").innerText = (Array.isArray(sg) && (sg.length > 1) && (sg[setCnt] != undefined) ? sg[setCnt] : fnSts[setCnt]);//
+								document.getElementById("exe").innerText += ", " + (setCnt + 1);
+//document.getElementById("exe").innerText = ((Array.isArray(sg) && (sg.length > 1)) ? sg[setCnt] : (Array.isArray(sg) && (sg.length <= 1)) ? sg[0] : wte) + ", " + (setCnt + 1);
 							}
 						}
 
