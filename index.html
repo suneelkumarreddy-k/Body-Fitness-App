@@ -915,7 +915,7 @@ if (mse === undefined) {
 							mse += reps > 0 ? (" " + reps + " Reps") : "";
 							window.speechSynthesis.speak(new SpeechSynthesisUtterance(mse));
 							document.getElementById("exe").innerText = (Array.isArray(sg) && (sg.length > 1) && (sg[setCnt] != undefined) ? sg[setCnt] : fnSts[setCnt]); // 
-							document.getElementById("exe").innerText = ", " + (setCnt+1);
+							document.getElementById("exe").innerText += ", " + (setCnt+1);
 //document.getElementById("exe").innerText = ((Array.isArray(sg) && (sg.length > 1)) ? sg[setCnt] : (Array.isArray(sg) && (sg.length <= 1)) ? sg[0] : wte) + ", " + (setCnt + 1);
 						}
 
