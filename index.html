@@ -80,7 +80,7 @@ input[type=button],input[type=submit] ,button {
 	display: inline-block;
 }
 
-input[type=button]:disabled ,input[type=submit]:disabled ,#shre:disabled,#spWt:disabled  {
+input[type=button]:disabled ,input[type=submit]:disabled ,#shre:disabled,#spWt:disabled,#stopWth:disabled,#resetWth:disabled, #startWth:disabled  {
 	background: #A9A9A9;
 }
 
@@ -157,8 +157,24 @@ input:checked + .slider:before {
 }
 
 
- #tracker, #log {
+ #tracker, #log, #stopwatch {
 display : none; 
+ }
+ 
+ #seconds {
+   font-size: 100px;
+ }
+ 
+ #secSwtch {
+   padding: 8%;
+   text-align: center;
+ }
+ 
+ .wthBtn {
+   text-align: center;
+   font-size: 25px;
+   text-transform: uppercase;
+   width: 32%;
  }
 </style>
 </head>
@@ -222,6 +238,7 @@ display : none;
       <input type="button" value="PUMP DUMP" id="btnPmp" onclick="pump()" />
      <!-- <input type="button" value="REPROGRAM" id="btnRpm" onclick="reProgram()" />-->
  <input type="button" value="LOG" id="btnLog" onclick="secOps(this)" />
+ <input type="button" value="STOPWATCH" id="btnSwth" onclick="secOps(this)" />
       <input type="submit" value="PROGRAM" id="btnPrm" />
     </form> 
 <table>
@@ -338,8 +355,59 @@ display : none;
    <input id="btnDlog" type="button" value="DUMMY" onclick="dLog()" disabled />
 <input type="button" value="SCHEMA" id="btnSma" onclick="secOps(this)" />
    </section>
+<section id="stopwatch">
+      <h2 id="sh">Stopwatch_</h2>
+      <div id="secSwtch">
+      <div id="seconds">
+        00
+      </div>
+      
+      <button class="wthBtn" id="startWth" onclick="startWth();disableWthBtns(this)">Start</button>
+      <button class="wthBtn" id="stopWth" onclick="stopWth();disableWthBtns(this)" disabled>Stop</button>
+      <button class="wthBtn" id="resetWth" onclick="resetWth();disableWthBtns(this)" disabled>Reset</button>
+      </div>
+      <input type="button" value="SCHEMA" id="btnSma" onclick="secOps(this)" />
+    </section>
 <script>
 try {
+let wthInterval;
+  let second = 0;
+  
+  function startWth() {
+    wthInterval = setInterval(wthCounter, 1000);
+    document.getElementById("seconds").innerText = second;
+  }
+  
+  function wthCounter() {
+    second++;
+    document.getElementById("seconds").innerText = second;
+  }
+  
+  function stopWth() {
+    clearInterval(wthInterval);
+  }
+  
+  function disableWthBtns(ele) {
+    if (ele.id === "startWth") {
+      ele.disabled = true;
+      document.getElementById("stopWth").disabled = false;
+      document.getElementById("resetWth").disabled = true;
+    } else if (ele.id === "stopWth") {
+      ele.disabled = true;
+      document.getElementById("startWth").disabled = false;
+      document.getElementById("resetWth").disabled = false;
+    } else {
+      ele.disabled = true;
+      document.getElementById("startWth").disabled = false;
+      document.getElementById("stopWth").disabled = true;
+    }
+  }
+  
+  function resetWth() {
+    clearInterval(wthInterval);
+    second = 0;
+    document.getElementById("seconds").innerText = second;
+  }
 	function reProgram() {
 
 		if (typeof(Storage) !== "undefined") {
@@ -742,31 +810,36 @@ return nwrt;
 	}
 
 
+	const secSa = document.getElementById("schema");
+const secTr = document.getElementById("tracker");
+const secLg = document.getElementById("log");
+const secSh = document.getElementById("stopwatch");
+
+
 	function secOps(obj) {
 		if (obj.id === "btnPrm") {
-			let secSa = document.getElementById("schema");
-			let secTr = document.getElementById("tracker");
-			let secLg = document.getElementById("log");
-
 			secSa.style.display = "none";
 			secLg.style.display = "none";
+			secSh.style.display = "none"
 			secTr.style.display = "block";
 			secTr.scrollIntoView();
 		} else if (obj.id === "btnSma") {
-			let secSa = document.getElementById("schema");
-			let secTr = document.getElementById("tracker");
-			let secLg = document.getElementById("log");
 			secLg.style.display = "none";
 			secTr.style.display = "none";
+			secSh.style.display = "none"
 			secSa.style.display = "block";
 			secSa.scrollIntoView();
+			stopWth();
+		} else if (obj.id === "btnSwth") {
+		  secLg.style.display = "none";
+		  secTr.style.display = "none";
+		  secSh.style.display = "block"
+		  secSa.style.display = "none";
+		  secSh.scrollIntoView();
 		} else {
-			let secSa = document.getElementById("schema");
-			let secTr = document.getElementById("tracker");
-			let secLg = document.getElementById("log");
-
 			secTr.style.display = "none";
 			secSa.style.display = "none";
+			secSh.style.display = "none";
 			secLg.style.display = "block";
 			secLg.scrollIntoView();
 		}
